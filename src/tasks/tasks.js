@@ -8,7 +8,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AddIcon from "@material-ui/icons/Add";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { Button, Input, Grid, Paper,Checkbox } from "@material-ui/core";
+import { Button, Input, Grid, Paper, Checkbox } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +32,7 @@ fetch('https://jsonplaceholder.cypress.io/todos/1')
   .then(response => response.json())
   .then(json => console.log(json))
 
-  
+
 export default function Tasks() {
   const classes = useStyles();
   const [task, setTask] = useState("");
@@ -47,7 +47,10 @@ export default function Tasks() {
     setTask("");
   };
 
-  return (
+  return (<>
+    <header className="App-header">
+      <p> TODO APP</p>
+    </header>
     <Grid container spacing={1} className={classes.root}>
       <Grid item xs={12}>
         <Paper className={classes.paper}>
@@ -63,13 +66,13 @@ export default function Tasks() {
             onClick={addTask}
             className={classes.buttons}
           >
-            <AddIcon />
-          </Button>
+          <AddIcon />
+        </Button>
           <ul className={classes.lists}>
             {newtask.map((val, key) => {
               return (
                 <li key={key} borders={2}>
-                  <Checkbox/> {val}
+                  <Checkbox /> {val}
                 </li>
               );
             })}
@@ -90,5 +93,6 @@ export default function Tasks() {
         </Paper>
       </Grid>
     </Grid>
+  </>
   );
 }
