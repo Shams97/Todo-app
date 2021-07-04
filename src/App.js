@@ -20,7 +20,7 @@ function getToken() {
 
 function App() {
   const [token, setToken] = useState(getToken());
-// Checking if the user is currnetly loged or not 
+// Checking if the user is currnetly loged in or not 
   if(!token) 
   return <Registeration setToken={setToken} />
   
@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={Tasks}/> 
+          <Route path="/tasks" component={Tasks}/> 
           <Route path="/login" component={Login}/> 
         </Switch>
       </BrowserRouter>   
