@@ -10,10 +10,6 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import { Button, Input, Grid, Paper, Checkbox } from "@material-ui/core";
 import {useStyles} from '../styles'
 
-fetch('https://jsonplaceholder.cypress.io/todos/1')
-  .then(response => response.json())
-  .then(json => console.log(json))
-
 
 export default function Tasks() {
   const classes = useStyles();

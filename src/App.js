@@ -3,6 +3,7 @@ import React,{useState} from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Tasks from './tasks/tasks';
 import Login from './accounts/login';
+import Registeration from './accounts/registration';
 
 
 function setToken(userToken) {
@@ -21,13 +22,14 @@ function App() {
   const [token, setToken] = useState(getToken());
 // Checking if the user is currnetly loged or not 
   if(!token) 
-  return <Login setToken={setToken} />
+  return <Registeration setToken={setToken} />
   
   else return (
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route path="/accounts/login" component={Tasks}/> 
+          <Route path="/" component={Tasks}/> 
+          <Route path="/login" component={Login}/> 
         </Switch>
       </BrowserRouter>   
     </div>

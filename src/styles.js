@@ -14,7 +14,8 @@ export const useStyles = makeStyles((theme) => ({
       textAlign: "center",
       color: theme.palette.text.secondary,
       boxShadow:'none',
-
+      display:'flex',
+      flexDirection:'column'
     },
     lists: {
       listStyle: "none",
